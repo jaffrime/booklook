@@ -43,7 +43,7 @@ var fetch = function (searchData) {
       $("#loadingimage").hide();
       // debugger;
       // console.log(data);
-      if (data.totalItems > 1) {
+      if (data.items.length > 1) {
       //  displayOptions(data);
         var source = $("#options-template").html();
         var template = Handlebars.compile(source);
@@ -52,23 +52,12 @@ var fetch = function (searchData) {
             //{title: , author: }
           ]
         };
-        // console.log(data.items[0].volumeInfo.title);
-        // console.log(data.items[0].volumeInfo.authors[0]);
-        // bookOptions.list.push({title: data.items[0].volumeInfo.title, author: data.items[0].volumeInfo.authors[0]});
-        // console.log(data.items[1].volumeInfo.title);
-        // console.log(data.items[1].volumeInfo.authors[0]);
-        // bookOptions.list.push({title: data.items[1].volumeInfo.title, author: data.items[1].volumeInfo.authors[0]});
-        // console.log(data.items[2].volumeInfo.title);
-        // console.log(data.items[2].volumeInfo.authors[0]);
-        // bookOptions.list.push({title: data.items[2].volumeInfo.title, author: data.items[2].volumeInfo.authors[0]});
 
-
-        for (i=0; i<data.items; i++) {
-          console.log(data.items[i].volumeInfo.title);
-          console.log(data.items[i].volumeInfo.authors[0]);
+        for (i=0; i<data.items.length; i++) {
           bookOptions.list.push({title: data.items[i].volumeInfo.title, author: data.items[i].volumeInfo.authors[0]});
         }
         console.log(bookOptions);
+
         $(".data-presentation").empty();
         var newHTML = template(bookOptions);
         $(".data-presentation").append(newHTML);
