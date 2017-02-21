@@ -29,13 +29,29 @@
 
     <div class="container">
       <div class="data-presentation">
-
+        <div id='loadingimage' style='display:none'>
+          <img src='ajax-loader.gif'/>
+        </div>
       </div>
     </div>
 
-    <h3>Search by ISBN</h2>
-    <input placeholder="ISBN Number" class="isbn-input" />
-    <button type="button" class="btn btn-primary isbn-search">Search</button>
+    <div class="isbn">
+      <h3>Search by ISBN</h3>
+      <input placeholder="ISBN Number" class="isbn-input" data-search="isbn" />
+      <button type="button" class="btn btn-primary isbn-search search">Search</button>
+    </div>
+
+    <div class="title">
+      <h3>Search by Title</h3>
+      <input placeholder="Book Title" class="title-input" data-search="title" />
+      <button type="button" class="btn btn-primary title-search search">Search</button>
+    </div>
+
+    <div class="author">
+      <h3>Search by Author</h3>
+      <input placeholder="Author Name (last,first)" class="author-input" data-search="author" />
+      <button type="button" class="btn btn-primary author-search search">Search</button>
+    </div>
 
 
 

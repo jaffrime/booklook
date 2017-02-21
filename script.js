@@ -1,15 +1,25 @@
-$('.isbn-search').on('click',function(){
+$('.search').on('click',function(){
   var isbnVar = $('.isbn-input').val();
   // alert(isbnVar);
   fetch(isbnVar);
 });
 
+$(document).ajaxStart(function(){
+    $("#loadingimage").css("display", "block");
+});
+
+$(document).ajaxComplete(function(){
+    $("#loadingimage").css("display", "none");
+});
+
 var fetch = function (isbnVar) {
+  $("loadingimage").show();
   $.ajax({
     method: "GET",
     url: "https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbnVar,
     dataType: "json",
     success: function(data) {
+      $("#loadingimage").hide();
       //debugger;
       //console.log(data);
       var source = $("#book-template").html();
