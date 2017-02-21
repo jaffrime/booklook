@@ -27,6 +27,14 @@
       <img src= {{ imageURL }} />
     </script>
 
+    <script id="options-template" type="text/x-handlebars-template">
+      <ul>
+        {{#each list}}
+        <li> {{ title }}, by: {{ author}} </li>
+        {{/each}}
+      </ul>
+    </script>
+
     <div class="container">
       <div class="data-presentation">
         <div id='loadingimage' style='display:none'>
