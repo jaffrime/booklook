@@ -15,12 +15,29 @@
 
   </head>
   <body>
-    <h1>BookLook <i class="fa fa-eye" aria-hidden="true"></i></h1>
-    <hr />
+    <header>
+      <h1>BookLook <i class="fa fa-eye" aria-hidden="true"></i></h1>
+      <hr />
+    </header>
+
+    <script id="book-template" type="text/x-handlebars-template">
+      <h1> {{ title }} </h1>
+      <h3>by: {{ author }}</h3>
+      <p> {{ description }} </p>
+      <img src= {{ imageURL }} />
+    </script>
+
+    <div class="container">
+      <div class="data-presentation">
+
+      </div>
+    </div>
 
     <h3>Search by ISBN</h2>
-    <input placeholder="ISBN Number"  />
-    <button type="button" class="btn btn-primary">Search</button>
+    <input placeholder="ISBN Number" class="isbn-input" />
+    <button type="button" class="btn btn-primary isbn-search">Search</button>
+
+
 
     <script type="text/javascript" src="script.js"></script>
   </body>
